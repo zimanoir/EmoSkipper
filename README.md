@@ -25,6 +25,20 @@ Rather than a strict rhythmic sequencer, it functions more like a **chaotic nois
 - **Low-Latency Processing** – ~450 Hz loop speed for responsive real-time performance
 - **Upcycled Design** – Built from salvaged components from broken electronics
 
+## Planned Wireless Modular System
+
+The next stage of pulseFlesh will be built as two separate devices: a wearable wireless bio-sequencer and a dedicated Eurorack module.
+
+### Wearable bio-sequencer
+
+The wearable unit will use reusable metal connectors and an ESP32-D board with a DAC output that provides a separate stable ground for the ECG module while making the system convenient to wear.
+
+The wearable unit will be available as a separate device for bio-data output, with access to an application. It will also work independently as a complete wireless bio-sequencer, transmitting MIDI over Wi-Fi without a cable to the musical system.
+
+### Eurorack module
+
+A separate Eurorack module will provide wired MIDI and CV outputs for integration with modular synthesizers and other hardware musical systems.
+
 ## Specifications
 
 | Aspect | Details |
