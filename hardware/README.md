@@ -1,6 +1,6 @@
 # Hardware Prototype
 
-## pulseFlesh V1 System Schematic
+## pulseFlesh v2.0 Current Stage-Prototype Schematic
 
 ```mermaid
 graph TD

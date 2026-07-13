@@ -1,22 +1,34 @@
-#  project development roadmap
+# pulseFlesh v2.0 development roadmap
 
+## Current phase: stage testing
 
-phase 1: hardware evolution
-eurorack adaptation: redesigning the PCB into a standard Eurorack module format.
-power stage: implementing a dedicated low-noise power circuit running on standard Eurorack rails (±12V), with DC-DC regulation to isolate digital noise.
-input/output protection: adding hardware protection loops for all analog inputs and outputs to prevent damage from patching errors.
-high-quality connectivity: replacing temporary components with professional Thonkiconn jack connectors.
+The existing prototype is being tested in a stage context. This phase is used to understand how ECG, heart rhythm, muscle activity, impacts, and CV control behave as artistic material during performance.
 
-phase 2: cv precision and sequencing
-voltage scaling: using Rail-to-Rail Operational Amplifiers (TL072/OPA2134) to boost 3.3V logic to the standard Eurorack 10V CV range.
-precision buffering: integrating low-impedance output buffers for signal stability.
-bi-polar control: adding analog bias circuits for manual range shifting (offset) of bio-signals.
-16-step sequencer engine: developing a hardware-timed sequencer with a built-in quantizer to map chaotic heart/muscle spikes to musical semitones (V/Oct).
-latency optimization: tuning data processing for sub-2ms response time.
+The stage-testing process created the artistic need to reconfigure pulseFlesh as a wireless bio-sequencer and bio-data source.
 
+## Phase 1: wearable interface
 
+- Develop the wearable pulseFlesh v2.0 unit around ESP32-D.
+- Use reusable metal connectors.
+- Use the DAC output to provide a separate stable ground for the ECG module.
+- Transmit MIDI wirelessly over Wi-Fi.
+- Provide access to an application.
+- Make the wearable available as an independent device and complete wireless bio-sequencer.
 
-phase 3: connectivity and expansion
-midi integration: implementing stable MIDI over USB and a classic 5-pin DIN MIDI port.
-mobile companion: building an ESP32 Wi-Fi app for mapping bio-signals to MIDI CC and remote pattern editing.
-wireless workflow: enabling real-time sequence and pattern control directly from a smartphone during live performances.
+## Phase 2: standalone output box
+
+- Build an optional compact standalone box.
+- Provide wired MIDI output.
+- Provide CV outputs.
+- Use one encoder for unified adjustment.
+
+## Phase 3: Eurorack output module
+
+- Build an optional Eurorack version for synthesizers.
+- Provide MIDI output.
+- Provide CV outputs.
+- Integrate pulseFlesh v2.0 directly with modular systems.
+
+## v2.0 system
+
+The wearable interface is the core instrument. The standalone box and Eurorack module are optional output devices for different performance setups.

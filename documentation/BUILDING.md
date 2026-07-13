@@ -1,6 +1,6 @@
-# Building pulseFlesh V1
+# Building the pulseFlesh v2.0 Stage Prototype
 
-This guide will walk you through assembling the hardware for pulseFlesh V1. The build requires basic soldering skills and takes approximately 2-3 hours.
+This guide covers the current pulseFlesh v2.0 stage prototype. The build requires basic soldering skills and takes approximately 2-3 hours.
 
 ## Components List
 
@@ -112,7 +112,7 @@ This prevents ground loops and hum.
 ### Step 6: Flash the Firmware
 
 1. Install the Arduino IDE and ESP32 board package
-2. Open `software/pulseFlesh v1.ino`
+2. Open `software/pulseFlesh v2.0.ino`
 3. Select **Board: ESP32 Dev Module**
 4. Upload the sketch to your ESP32
 5. Check the Serial Monitor (115200 baud) for initialization message

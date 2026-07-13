@@ -1,48 +1,80 @@
-# pulseFlesh V1
+# pulseFlesh v2.0
 
-A bio-interface NIME that transforms body signals into control voltages for analog synthesizers.
+A wireless wearable bio-sequencer and bio-data source for musical, stage, and interactive systems.
 
-## What is pulseFlesh V1?
+## Project direction
 
-**pulseFlesh V1** is an experimental digital musical instrument (NIME) designed to create live sound through embodied interaction. It reads your body signals — heart activity via ECG, muscle tension, and physical impacts — and converts them into control voltages that modulate analog synthesizer parameters like pitch, filter cutoff, and trigger signals.
+**pulseFlesh v2.0** grows out of an experimental bio-interface NIME that transforms body signals into musical control data. The current hardware is at the stage-testing phase. Artistic work with the prototype created the need to reconfigure the project as a wireless instrument: a wearable bio-sequencer and a source of bio-data rather than a device tied directly to one synthesizer by cables.
 
-Rather than a strict rhythmic sequencer, it functions more like a **chaotic noise machine and vibe generator**, blending structured heartbeat data with unpredictable muscle activity to create expressive, organic sound.
+The v2.0 system is developing into a wearable interface that reads heart activity through ECG and sends the resulting data wirelessly over Wi-Fi MIDI.
 
-## Quick Links
+The wearable interface will work with either of two optional output devices:
 
-- 📖 **[Full Documentation](documentation/)** – Technical overview, architecture, and signal processing
-- 🔧 **[Building Instructions](documentation/BUILDING.md)** – How to assemble the hardware
-- ⚙️ **[Hardware Specs](hardware/)** – Schematics and component details
-- 💾 **[Firmware](software/)** – ESP32 Arduino sketches
-- 🎧 [Listen To](https://on.soundcloud.com/DI3SJaFWWPOsZSelK7/) - SoundCloud test recording CV controlled Moog Werkstatt-01, VCO FM IN, GATE IN, VCF IN
+1. **Standalone box** — a compact external unit with wired MIDI and CV outputs, adjusted through a single encoder.
+2. **Eurorack module** — a dedicated module with MIDI and CV outputs for direct integration with modular synthesizers.
 
-## Key Features
+The wearable unit will also be usable independently as a complete wireless bio-sequencer and bio-data source with access to an application.
 
-- **ECG Input** – Reads heart rate and converts to smooth CV modulation
-- **Muscle Sensing** – Detects muscle tension as a "chaos index" for expressive control
-- **Impact Detection** – Piezo sensor captures physical hits for sharp CV triggers
-- **Three Independent Outputs** – Jack 1 (Mix 1), Jack 2 (Mix 2), Jack 3 (Direct Piezo)
-- **Low-Latency Processing** – ~450 Hz loop speed for responsive real-time performance
-- **Upcycled Design** – Built from salvaged components from broken electronics
+## System path
 
-## Planned Wireless Modular System
+```text
+reusable metal connectors
+        ↓
+ECG module
+        ↓
+wearable ESP32-D + DAC output
+        ↓
+Wi-Fi MIDI
+        ├──→ application / musical or stage software
+        ├──→ optional standalone box → wired MIDI + CV
+        └──→ optional Eurorack module → MIDI + CV
+```
 
-The next stage of pulseFlesh will be built as two separate devices: a wearable wireless bio-sequencer and a dedicated Eurorack module.
+The ESP32-D wearable board uses a DAC output to provide a separate stable ground for the ECG module and to make the interface convenient to wear.
 
-### Wearable bio-sequencer
+## Current status: stage testing
 
-The wearable unit will use reusable metal connectors and an ESP32-D board with a DAC output that provides a separate stable ground for the ECG module while making the system convenient to wear.
+The current prototype is almost fully soldered and is being tested in a stage context. It reads body signals — heart activity via ECG, muscle tension, and physical impacts — and converts them into control voltages for analog synthesizers.
 
-The wearable unit will be available as a separate device for bio-data output, with access to an application. It will also work independently as a complete wireless bio-sequencer, transmitting MIDI over Wi-Fi without a cable to the musical system.
+At this stage, the prototype works as a chaotic noise machine and vibe generator, combining structured heartbeat data with unpredictable muscle activity. Stage testing is guiding its artistic transformation into the wireless v2.0 bio-sequencer.
+
+## Current prototype features
+
+- **ECG input** — reads heart activity and converts it to smooth CV modulation.
+- **Muscle sensing** — detects muscle tension as a chaos index for expressive control.
+- **Impact detection** — uses a piezo sensor for physical hits and sharp CV triggers.
+- **Three independent outputs** — Mix 1, Mix 2, and Direct Piezo.
+- **Low-latency processing** — approximately 450 Hz loop speed.
+- **Upcycled design** — uses salvaged components from broken electronics.
+
+## v2.0 wearable interface
+
+- Reusable metal connectors.
+- ESP32-D board worn on the body.
+- DAC output providing a separate stable ground for the ECG module.
+- Wireless MIDI transmission over Wi-Fi.
+- Access to an application.
+- Independent use as a complete wireless bio-sequencer and bio-data source.
+- Availability as a separate wearable device.
+
+## Optional output devices
+
+### Standalone box
+
+- Wired MIDI output.
+- CV outputs.
+- Unified adjustment with one encoder.
 
 ### Eurorack module
 
-A separate Eurorack module will provide wired MIDI and CV outputs for integration with modular synthesizers and other hardware musical systems.
+- MIDI output.
+- CV outputs.
+- Direct integration with modular synthesizers.
 
-## Specifications
+## Current stage-prototype specifications
 
 | Aspect | Details |
-|--------|--------|
+|--------|---------|
 | **Microcontroller** | ESP32 |
 | **ECG Sensor** | AD8232 Red Board |
 | **Power** | 18650 Battery + Charging Board |
@@ -50,52 +82,47 @@ A separate Eurorack module will provide wired MIDI and CV outputs for integratio
 | **Loop Speed** | ~450 Hz |
 | **ADC Resolution** | 12-bit |
 
-## Get Started
+These specifications describe the current stage prototype. The v2.0 wearable and its optional output devices are the next development stage.
 
-<img src="images/prototype-eurorack%201.0.png" alt="pulseFlesh V1 faceplate" width="250" style="float: left; margin-right: 20px; margin-bottom: 20px; border: 1px solid #333; border-radius: 4px;"/>
+## Integration
 
-### about the hardware
-the pulseflesh v1 panel is designed to provide immediate visual feedback on the bio-data flow. the led strip tracks real-time signal intensity, while the clearly marked inputs and outputs allow for quick patching. the layout focuses on the balance between chaotic bio-modulation and controlled sequencing, making it an intuitive tool for both experimental noise and structured rhythm generation.
+One pulseFlesh integration is **Dance of Life**, which uses Max/MSP and MediaPipe. Heart rhythm can be used there as a musical and rhythmic control signal alongside other input data.
 
-<div style="clear: both;"></div>
+## Quick links
 
-Здесь ты пишешь свой текст. Благодаря `float: left` картинка прижимается к левому краю, а текст автоматически начинает обтекать её с правой стороны. 
+- 📖 **[Full documentation](documentation/)** — project overview and signal processing.
+- 🧭 **[Development roadmap](documentation/roadmap.md)** — path from stage prototype to v2.0.
+- 🔧 **[Building instructions](documentation/BUILDING.md)** — current prototype assembly.
+- ⚙️ **[Hardware](hardware/)** — current prototype schematic and components.
+- 💾 **[Firmware](software/)** — ESP32 Arduino sketch.
+- 🎧 **[Listen](https://on.soundcloud.com/DI3SJaFWWPOsZSelK7/)** — stage-prototype test recording with a CV-controlled Moog Werkstatt-01.
 
-Не забудь добавить `margin-right`, чтобы текст не прилипал к картинке, и `margin-bottom` для отступа снизу.
+## Project structure
 
-1. **Read the [Building Guide](documentation/BUILDING.md)** – Solder components and assemble the enclosure
-2. **Upload the [Firmware](software/pulseFlesh%20v1.ino)** – Flash the ESP32 with the provided sketch
-3. **Patch & Perform** – Connect your synth and start creating
-
-## Project Structure
-
-```
+```text
 .
-├── README.md                      # This file
-├── CITATION.cff                   # Citation metadata
-├── hardware/                      # Schematics and component specs
-│   └── README.md
-├── software/                      # Firmware code
-│   └── pulseFlesh v1.ino
-├── documentation/                 # Detailed technical docs
-│   ├── README.md                 # Full project overview
-│   └── BUILDING.md               # Assembly instructions
-└── files/                         # Additional resources
+├── README.md
+├── CITATION.cff
+├── hardware/
+├── software/
+├── documentation/
+├── images/
+└── files/
 ```
 
 ## Author
 
-**Fëdor Zima** – Conservatorio Maderna-Lettimi Cesena Rimini
+**Fëdor Zima** — Conservatorio Maderna-Lettimi Cesena Rimini
 
 ## License
 
-MIT License – Feel free to use, modify, and share!
+MIT License — feel free to use, modify, and share.
 
 ## Citation
 
-If you use pulseFlesh V1 in your work, please cite it using the metadata in [`CITATION.cff`](CITATION.cff).
+If you use pulseFlesh v2.0 in your work, please cite it using the metadata in [`CITATION.cff`](CITATION.cff).
 
 ---
 
-**Status:** Experimental prototype ✨  
-**Last Updated:** June 2026
+**Status:** Stage testing / v2.0 wireless redevelopment<br>
+**Last updated:** July 2026

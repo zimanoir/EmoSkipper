@@ -24,7 +24,7 @@ float smoothPiezo = 0.0;
 void setup() {
   #if DEBUG_MODE
     Serial.begin(115200);
-    Serial.println("PULSEFLESH V1: BIO-INTERFACE INITIALIZED");
+    Serial.println("PULSEFLESH V2.0: BIO-INTERFACE INITIALIZED");
   #endif
   
   pinMode(BLUE_LED_PIN, OUTPUT);

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: pulseFlesh V1
+title: pulseFlesh v2.0
 message: >
   If you use this software, please cite it using the
   metadata from this file.
@@ -9,14 +9,13 @@ authors:
     family-names: Zima
     email: zimanoir@gmail.com
     affiliation: Conservatorio Maderna-Lettimi Cesena Rimini
-repository-code: 'https://github.com/zimanoir/pulseFlesh-V1'
+repository-code: 'https://github.com/zimanoir/pulseFlesh-v2.0'
 abstract: >
-  pulseFlesh V1 is a bio-interface NIME that converts body signals
-  (ECG, heart rate, muscle activity, and mechanical impacts) into
-  control voltages for analog synthesizers. It enables live performance
-  and experimental sound creation through embodied interaction by
-  transforming physiological data into expressive modulation sources
-  for synthesizer parameters like pitch, filter cutoff, and trigger signals.
+  pulseFlesh v2.0 is a wireless wearable bio-sequencer and bio-data
+  source developing from a stage-tested bio-interface NIME. It reads
+  heart activity through ECG and sends musical control data over Wi-Fi
+  MIDI. Optional standalone and Eurorack devices provide wired MIDI and
+  CV outputs.
 keywords:
   - NIME
   - DMI
