@@ -11,11 +11,12 @@ authors:
     affiliation: Conservatorio Maderna-Lettimi Cesena Rimini
 repository-code: 'https://github.com/zimanoir/pulseFlesh-v2.0'
 abstract: >
-  pulseFlesh v2.0 is a wireless wearable bio-sequencer and bio-data
-  source developing from a stage-tested bio-interface NIME. It reads
-  heart activity through ECG and sends musical control data over Wi-Fi
-  MIDI. Optional standalone and Eurorack devices provide wired MIDI and
-  CV outputs.
+  pulseFlesh v2.0 is a two-device bio-interface system developing from
+  a stage-tested NIME. An independent wearable unit reads ECG and piezo
+  data and is controlled by an application over Wi-Fi. A separate
+  hardware sequencer, available in standalone or Eurorack format,
+  receives bio-data over Wi-Fi and converts it into visualized sequences
+  with physical control, wired MIDI, and CV outputs.
 keywords:
   - NIME
   - DMI
